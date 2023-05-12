@@ -1,0 +1,148 @@
+body {
+    background-image: url(theatre.jpeg);
+    background-size: 100%;
+    font-family: sans-serif;
+    color: white;
+    letter-spacing: 1px;
+}
+header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: lightseagreen;
+}
+#wrapper{
+    display: flex;
+    justify-content: space-between;
+    list-style: none;
+
+    /* background: red; */
+    cursor: pointer;
+}
+li{
+    margin-left: 20px;
+    
+
+}
+a{
+    text-decoration: none;
+    color: #ddd;
+}
+h1,h2 {
+    font-weight: normal;
+}
+
+#details {
+    background-color: gray;
+    width: 100%;
+    max-width: 960px;
+    margin: 20px auto;
+    border-radius: 6px;
+    box-shadow: 1px 10px 10px rgba(0,0,0,0.7);
+    box-sizing: border-box;
+    padding: 0 0 20px;
+    overflow: hidden;
+    border: 1px solid lightgray;
+}
+#pageinfor {
+    
+    background-size: 90%;
+    align-items: center;
+    
+    padding-left: 10px;
+}
+
+#pageinfor h1, #pageinfor p {    
+    text-align: center;
+    width: 100%;
+    margin: 10px 0;
+}
+
+#add-user, #movie-list {
+margin: 30px;
+}
+
+#register ul {
+    list-style: none;
+    padding: 0;
+}
+
+#register li {
+   border-left: 5px solid #ddd;
+    padding: 20px;
+    margin: 20px 10px;
+    color: white;
+}
+
+#register li:hover {
+    border-color: #9361bf;
+}
+.delete {
+    float: right;
+    background: #f70000;
+    color: #ffffff;
+    padding: 6px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.delete:hover {
+    background: maroon;
+}
+
+#add-user {
+    width: 400px;
+    margin: 0 auto; 
+    
+}
+.userinfo input{
+    width: 80%;
+}
+
+#add-user input {
+    display: block;
+    margin: 20px 0;
+    padding: 10px;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+    width: 80%;
+    clear: both;
+    cursor: pointer;
+}
+#add-user input:hover{
+    background: #9361bf;
+}
+
+select{
+    width: 80%;
+    display: block; 
+    padding: 5px 5px;
+    border: none;
+
+}
+
+#add-user button {
+    border: 1px solid rgb(128, 15, 0);
+    background: rgb(128, 36, 0);
+    padding: 10px 20px;
+    font-size: 14px;
+    display: inline-block;
+    width: 100px;
+    border-radius: 0 4px 4px 0;
+    cursor: pointer;
+    border-left: 0;
+    color: white;
+    margin: 20px 0;
+}
+#add-user button:hover {
+    background: rgb(27, 0, 100);
+}
+
+#add-user:after{
+    content: "";
+    display : block;
+    clear: both;
+}
+#add-user label{
+   line-height: 52px;
+}

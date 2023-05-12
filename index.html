@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie</title>
+    <link rel="stylesheet" href="./style.css">
+
+</head>
+
+<body>
+    <div id="details">
+        <header>
+            <a href="logo">LOGO</a>
+            <nav>
+             <ul id="wrapper">
+            
+                    <li><a href="home">HOME</a></li>
+                    <li><a href="about">ABOUT</a></li>
+                    <li><a href="blog">BLOG</a></li> 
+                
+              </ul>
+            </nav>
+            
+        </header>
+        <div id="register">
+            <h2 class="title" style="color: blue;">REGISTER HERE</h2>
+            <ul>
+                <li>
+                    <span class="name">JAPHETH</span>
+                    <span class="idno">39033531</span>
+                    <span class="country">KENYA</span>
+                    <span class="language">KISWAHILI</span>
+                    <span class="delete">delete</span>
+                </li>
+                <li>
+                    <span class="name">CHUAN</span>
+                    <span class="idno">4565363</span>
+                    <span class="country">UGANDA</span>
+                    <span class="LANGUAGE">ENGLISH</span>
+                    <span class="delete">delete</span>
+                </li>
+                <li>
+                    <span class="name">RONSON</span>
+                    <span class="idno">39033676</span>
+                    <span class="country">RWANDA</span>
+                    <span class="language">SPANISH</span>
+                    <span class="delete">delete</span>
+                </li>
+               
+            </ul>
+        </div>
+        <form id="add-user">
+            <div class="userinfo"> 
+                <label for="">username</label>
+                <input type="text" placeholder="username">
+            </div>
+            <div class="userinfo">
+                <label for="">IdNo</label>
+                <input type="number" placeholder="idno">
+            </div>
+            <div class="userinfor">
+                <label for="">country</label>
+                <select name="country" id="country">
+                    <option value="kenya">kenya</option>
+                    <option value="uganda">uganda</option>
+                    <option value="tanzania">Tanzania</option>
+                    <option value="rwanda">Rwanda</option>
+                    <option value="burundi">Burundi</option>
+                  </select>
+
+            </div>
+            <div class="userinfor">
+                <label for="">language</label>
+                <input type="text" placeholder="language">
+            </div>
+          <button>submit</button>
+        </form>
+    </div>
+    <script src="./script.js"></script>
+</body>
+
+</html>
