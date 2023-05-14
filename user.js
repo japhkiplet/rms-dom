@@ -1,62 +1,68 @@
-document.addEventListener('DOMContentLoaded', function() { 
-    const list = document.querySelector('#register ul');
-    const forms = document.forms;
-   
-       // delete user
-       list.addEventListener('click', (e) => {
-           if (e.target.className == 'delete') {
-               const li = e.target.parentElement;
-               li.parentNode.removeChild(li);
-           }
-       });
-   
-       // add user
-       const addForm = forms['add-user'];
-       addForm.addEventListener('submit', function(e) { 
-           e.preventDefault();
-   
-           // create elements
-            const usernameInput = document.getElementById("username");
-            const idNoInput = document.getElementById("id-number");
-            const countryInput = document.getElementById("country");
-            const languageInput = document.getElementById("language");
-            const deleteBtn = document.getElementById("add");
-            
-           // add text content
-           username.textContent = value;
-           idNoInput.textContent = value;
-           countryInput.textContent = value;
-           languageInput.textContent = value;
-           deleteBtn.textContent = 'delete';
-   
-           // add classes
-           username.classList.add('name');
-           deleteBtn.classList.add('delete');
-   
-           // append to DOM
-           li.appendChild(username);
-           li.appendChild(deleteBtn);
-           list.appendChild(li);
-   
-           // clear input
-           addForm.querySelector('input[type="text"]').value = '';
-           
-       })
-
-   function AllUsers(){
-    const storedUsers = JSON.parse(localStorage.getItem('allusers'));
-    for (let user of storedUsers){
-        console.log(user)
-        forms = document.createElement('li');
-        for (const[ key, value] of Object.entries(user)){
-            const tableData = document.createElement('li');
-            tableData.innerText = value;
-        forms.appendChild(ul);
-        }
-        forms.appendChild(li)
+let selectedRow = null;
+function onFormSubmit(e){
+    event.preventDefault();
+    let formData = readFormData();
+    if(selectedRow === null){
+        insertNewRecord(formData);
+    }else{
+        updateRecord(formData)
     }
-    // return storedUsers;
+    resetForm();
+    }
+// Read operation using this function
+function readFormData(){
+    let formData = {};
+    formData["fullName"] = document.getElementById("fullName").value;
+    formData["idNumber"] = document.getElementById("idNumber").value;
+    formData["country"] = document.getElementById("country").value;
+    formData["language"] = document.getElementById("language").value;
+    return formData;
 }
-// console.log(usersArray)
-AllUsers();
-   });
+
+// Create operation
+function insertNewRecord(data){
+    let table = document.getElementById("user-registration-management").getElementsByTagName('tbody')[0];
+    let newRow = table.insertRow(table.length);
+    let cell1 = newRow.insertCell(0);
+        cell1.innerHTML = data.fullName;
+    let cell2 = newRow.insertCell(1);
+        cell2.innerHTML = data.idNumber;
+    let cell3 = newRow.insertCell(2);
+        cell3.innerHTML = data.country;
+    let cell4 = newRow.insertCell(3);
+        cell4.innerHTML = data.language;
+    let cell5 = newRow.insertCell(4);
+        cell5.innerHTML = `<a href="#" onClick='onEdit(this)'>Edit</a>
+                        <a href="#" onClick='onDelete(this)'>Delete</a>`;
+}
+
+// To Reset the data of fill input
+function resetForm(){
+    document.getElementById('fullName').value = '';
+    document.getElementById('idNumber').value = '';
+    document.getElementById('country').value = '';
+    document.getElementById('language').value = '';
+    selectedRow = null;
+}
+
+// For Edit operation
+function onEdit(td){
+    selectedRow = td.parentElement.parentElement;
+    document.getElementById('fullName').value = selectedRow.cells[0].innerHTML;
+    document.getElementById('idNumber').value = selectedRow.cells[1].innerHTML;
+    document.getElementById('country').value = selectedRow.cells[2].innerHTML;
+    document.getElementById('language').value = selectedRow.cells[3].innerHTML;
+}
+function updateRecord(formData){
+    selectedRow.cells[0].innerHTML = formData.fullName;
+    selectedRow.cells[1].innerHTML = formData.idNumber;
+    selectedRow.cells[2].innerHTML = formData.country;
+    selectedRow.cells[3].innerHTML = formData.language;
+}
+function onDelete(td){
+    if(confirm('Are you sure you want to delete this record?')){
+        row = td.parentElement.parentElement;
+        document.getElementById('user-registration-management').deleteRow(row.rowIndex);
+        resetForm();
+    }    
+}
