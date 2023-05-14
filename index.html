@@ -3,88 +3,68 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>RMS</title>
-    <link rel="stylesheet" href="./style.css">
-
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Crud operation in javascript</title>
+    <link type="text/css" rel="stylesheet" href="style.css">
 </head>
 
-<body>
-    <div id="details">
-        <header>
-            <a href="logo">LOGO</a>
-            <nav>
-             <ul id="wrapper">
-            
-                    <li><a href="create">CREATE</a></li>
-                    <li><a href="register">REGISTER</a></li>
-                    <li><a href="update">UPDATE</a></li> 
-                    <li><a href="delete">DELETE</a></li>
-              </ul>
-            </nav>
-            
-        </header>
-        <h2 class="title" style="color: white; text-align: center; text-decoration: underline;">REGISTER HERE</h2>
+<body style="background-color: black;">
+    <table>
+        <tr>
+            <td>
+                <!--HTML form for crud operation-->
+                <form autocomplete="off" onsubmit="onFormSubmit()">
+                    <div>
+                        <label for="fullName">Full Name</label>
+                        <input type="text" name="fullName" id="fullName" >
+                    </div>
+                    <div>
+                        <label for="idNumber">ID Number</label>
+                        <input type="number" name="idNumber" id="idNumber">
+                    </div>
+                    <div>
+                        <label for="country">Country</label>
+                        <!-- <input type="text" name="country" id="country"> -->
+                        <select name="country" id="country">
+                            <option value="kenya">kenya</option>
+                            <option value="uganda">uganda</option>
+                            <option value="rwanda">Rwanda</option>
+                            <option value="Tanzania">Tanzania</option>
+                            <option value="burundi">Burundi</option>
+                            <option value="Ghana">Ghana</option>
+                            <option value="Nigeria">Nigeria</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label for="language">Language</label>
+                        <input type="text" name="language" id="language">
+                    </div>
+                    <div class="form_action--button">
+                        <input type="submit" value="Submit" style="background-color: greenyellow;">
+                        <input type="reset" value="Reset" style="background-color: orange;">
+                    </div>
+                </form>
+            </td>
+            <td>
+                <table class="list" id="user-registration-management">
+                    <thead>
+                        <tr>
+                            <th>Full Name</th>
+                            <th>ID Number</th>
+                            <th>Country</th>
+                            <th>Language</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
 
-        <form id="add-user">
-            <div class="userinfo"> 
-                <label for="">username</label>
-                <input type="text" placeholder="username">
-            </div>
-            <div class="userinfo">
-                <label for="">IdNo</label>
-                <input type="text" placeholder="idno">
-            </div>
-            <div class="userinfor">
-                <label for="">country</label>
-                <select name="country" id="country">
-                    <option value="kenya">kenya</option>
-                    <option value="uganda">uganda</option>
-                    <option value="tanzania">Tanzania</option>
-                    <option value="rwanda">Rwanda</option>
-                    <option value="burundi">Burundi</option>
-                  </select>
-
-            </div>
-            <div class="userinfor">
-                <label for="">language</label>
-                <input type="text" placeholder="language">
-            </div>
-          <button>submit</button>
-        </form>
-        <div id="register">
-            
-            
-            <ul>
-                <li>
-                    <span class="name">JAPHETH</span>
-                    <span class="idno">39033531</span>
-                    <span class="country">KENYA</span>
-                    <span class="language">KISWAHILI</span>
-                    <span class="delete">delete</span>
-                </li>
-                <li>
-                    <span class="name">CHUAN</span>
-                    <span class="idno">4565363</span>
-                    <span class="country">UGANDA</span>
-                    <span class="LANGUAGE">ENGLISH</span>
-                    <span class="delete">delete</span>
-                </li>
-                <li>
-                    <span class="name">RONSON</span>
-                    <span class="idno">39033676</span>
-                    <span class="country">RWANDA</span>
-                    <span class="language">SPANISH</span>
-                    <span class="delete">delete</span>
-                </li>
-               
-            </ul>
-        </div>
-        <div class="allusers"></div>
-       
-    </div>
-    <script src="user.js"></script>
+                    </tbody>
+                </table>
+            </td>
+        </tr>
+    </table>
+    <script type="text/javascript" src="./script.js"></script>
 </body>
 
 </html>
